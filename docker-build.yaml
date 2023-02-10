@@ -6,22 +6,22 @@
    
   - name: Check if directory exists
     stat:
-      path: /Angular
+      path: /AngularFront
     register: repo_stat
 
   - name: Clone repository
     shell: |
-      git clone https://github.com/BenAmor1/SpringBack.git /Angular
+      git clone https://github.com/BenAmor1/AngularFront.git /AngularFront
     when: repo_stat.stat.exists == False
     
   - name: Build the Docker image
     shell: | 
-      cd /Angular
+      cd /AngularFront
       docker build . -t angularfront/image
    
   - name: Tag the image
     shell: | 
-      cd /Angular
+      cd /AngularFront
       docker tag angularfront/image beffa/project_pfe-2022:angular_frontV1
   
   #push image to docker inventory
