@@ -13,6 +13,12 @@
     shell: |
       git clone https://github.com/BenAmor1/AngularFront.git /AngularFront
     when: repo_stat.stat.exists == False
+
+  - name: Pull repository
+    shell: |
+      cd /SpringBack
+      git pull 
+    when: repo_stat.stat.exists == True
     
   - name: Build the Docker image
     shell: | 
