@@ -26,7 +26,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class ProduitServiceService {
-  url = 'http://localhost:8082/SpringMVC/servlet/';
+  url = 'http://172.29.50.92:8082/SpringMVC/servlet/';
   constructor(private http: HttpClient) { }
 
   get(): Observable<any> {
