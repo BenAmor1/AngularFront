@@ -1,0 +1,175 @@
+
+
+<body class="bg-theme bg-theme1">
+
+<!-- Start wrapper-->
+<div id="wrapper">
+
+  <!--Start sidebar-wrapper-->
+  <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+    <div class="brand-logo">
+      <a href="index.html">
+        <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+        <h5 class="logo-text">3S</h5>
+      </a>
+    </div>
+    <ul class="sidebar-menu do-nicescrol">
+      <li class="sidebar-header">MAIN NAVIGATION</li>
+      <li>
+        <a href="http://localhost:9090/job/DevopsFinal/">
+          <i class="zmdi zmdi-view-dashboard"></i> <span>jenkins</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:8081/#browse/browse:MiniProjet">
+          <i class="zmdi zmdi-view-dashboard"></i> <span>nexus</span>
+        </a>
+      </li>
+      <li>
+        <a href="http://localhost:9000/dashboard?id=tn.esprit.spring%3Adevops">
+          <i class="zmdi zmdi-view-dashboard"></i> <span>sonar</span>
+        </a>
+      </li>
+
+
+
+
+    </ul>
+
+  </div>
+  <!--End sidebar-wrapper-->
+
+  <!--Start topbar header-->
+
+  <!--End topbar header-->
+
+  <div class="clearfix"></div>
+
+  <div class="content-wrapper">
+
+    <!-- End container-fluid-->
+
+
+    <div class="container" >
+
+      <br><br>
+      
+
+      <form  class="form-inline"  #f="ngForm" class="form-inline"  >
+
+        <input class="form-control mb-2 mr-sm-2" placeholder="Nom categorie" type="text" name="nom"  [(ngModel)]="cat.nom" required >
+
+        <input class="form-control mb-2 mr-sm-2" placeholder="Quantité" type="number" name="quantite"  [(ngModel)]="cat.qt" required>
+
+        <button class="btn btn-primary"(click)="save()">Ajouter</button>&nbsp;
+
+        <button class="btn btn-success" (click)="edit(cat.id,cat)">Modifier</button>&nbsp;
+
+        <button class="btn btn-light" (click)="annuler()">Annuler</button>
+
+      </form>
+
+
+      <br><br>
+
+      <table class="table table-hover">
+
+        <thead>
+
+        <tr style="text-align: center">
+
+          <th scope="col">ID</th>
+
+          <th scope="col">NOM</th>
+
+          <th scope="col">QANTITE</th>
+
+          <th scope="col">DATE CREATION</th>
+
+          <th scope="col">DATE MODIFICATION</th>
+
+          <th scope="col" id="coloneSupp" >ACTION</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody >
+
+        <tr style="text-align: center"  *ngFor="let cat of catList " >
+
+          <th  scope="row">{{ cat.id}}</th>
+
+          <td > {{ cat.nom}}</td>
+          <td>{{ cat.qt}}</td>
+
+          <td>{{ cat.datecreation | date}}</td>
+
+          <td>{{ cat.datemmodif | date}}</td>
+
+          <td id="coloneSupp1">
+
+            <button class="btn btn-danger" (click)="delete(cat.id)">delete</button>&nbsp;
+
+            <button class="btn btn-success" (click)="onEdit(cat)">edit</button>&nbsp;
+
+            <button type="submit" [routerLink]="['/produit/',cat.id]" class="btn btn-light">Détail</button>
+
+          </td>
+
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div><!--End content-wrapper-->
+  <!--Start Back To Top Button-->
+
+  <!--End Back To Top Button-->
+  <!--Start footer-->
+  <!--start color switcher-->
+  <div class="right-sidebar">
+    <div class="switcher-icon">
+      <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
+    </div>
+    <div class="right-sidebar-content">
+
+      <p class="mb-0">Gaussion Texture</p>
+      <hr>
+
+      <ul class="switcher">
+        <li id="theme3"></li>
+        <li id="theme2"></li>
+        <li id="theme1"></li>
+        <li id="theme4"></li>
+        <li id="theme5"></li>
+        <li id="theme6"></li>
+      </ul>
+
+      <p class="mb-0">Gradient Background</p>
+      <hr>
+
+      <ul class="switcher">
+        <li id="theme7"></li>
+        <li id="theme8"></li>
+        <li id="theme9"></li>
+        <li id="theme10"></li>
+        <li id="theme11"></li>
+        <li id="theme12"></li>
+        <li id="theme13"></li>
+        <li id="theme14"></li>
+        <li id="theme15"></li>
+      </ul>
+
+    </div>
+  </div>
+  <!--end color switcher-->
+
+</div><!--End wrapper-->
+
+<!-- Bootstrap core JavaScript-->
+
+
+</body>
+
