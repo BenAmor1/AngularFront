@@ -33,7 +33,3 @@
   - name: Push the image to Docker Hub
     shell: docker push beffa/project_pfe-2022:angular_frontV1
     
-  - name: delete all local images
-    shell: |
-      cd /AngularFront
-      docker rmi $(docker images -aq) -f
