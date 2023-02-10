@@ -1,0 +1,30 @@
+- name: Build and push Docker images
+  hosts: all
+  become: yes
+  
+  tasks:
+   
+  - name: Check if directory exists
+    stat:
+      path: /Angular
+    register: repo_stat
+
+  - name: Clone repository
+    shell: |
+      git clone https://github.com/BenAmor1/SpringBack.git /Angular
+    when: repo_stat.stat.exists == False
+    
+  - name: Build the Docker image
+    shell: | 
+      cd /Angular
+      docker build . -t angularfront/image
+   
+  - name: Tag the image
+    shell: | 
+      cd /Angular
+      docker tag angularfront/image beffa/project_pfe-2022:angular_frontV1
+  
+  #push image to docker inventory
+  - name: Push the image to Docker Hub
+    shell: docker push beffa/project_pfe-2022:angular_frontV1
+
