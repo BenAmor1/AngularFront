@@ -8,6 +8,7 @@
     stat:
       path: /AngularFront
     register: repo_stat
+    
 
   - name: Clone repository
     shell: |
@@ -16,7 +17,7 @@
 
   - name: Pull repository
     shell: |
-      cd /SpringBack
+      cd /AngularFront
       git pull 
     when: repo_stat.stat.exists == True
     
