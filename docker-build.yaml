@@ -9,7 +9,6 @@
       path: /AngularFront
     register: repo_stat
     
-
   - name: Clone repository
     shell: |
       git clone https://github.com/BenAmor1/AngularFront.git /AngularFront
