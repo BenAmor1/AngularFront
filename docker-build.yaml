@@ -1,7 +1,6 @@
 - name: Build and push Docker images
   hosts: all
   become: yes
-  
   tasks:
    
   - name: Check if directory exists
@@ -32,4 +31,5 @@
   
   - name: Push the image to Docker Hub
     shell: docker push beffa/project_pfe-2022:angular_frontV1
+    
     
